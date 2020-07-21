@@ -1,0 +1,18 @@
+language: generic
+sudo: 'required'
+
+services:
+  - docker
+
+stages:
+  - base
+
+before_script:
+  - docker login -u $DOCKER_REGISTRY_USERNAME -p $DOCKER_REGISTRY_TOKEN
+
+jobs:
+  include:
+    - stage: base
+      script:
+      - make -C base/alpinelinux/3.11.3 snapshot
+      - make -C base/alpinelinux/3.12.0 snapshot

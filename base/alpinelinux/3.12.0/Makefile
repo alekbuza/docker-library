@@ -24,5 +24,4 @@ DOCKER_BUILD_ARGS=\
 	--build-arg ALPINELINUX_VERSION=$(TAG)
 
 do-push: 
-	docker push $(IMAGE):$(VERSION)
-	docker push $(IMAGE):latest
+	docker push $(IMAGE):$(TAG)
