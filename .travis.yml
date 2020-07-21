@@ -9,7 +9,9 @@ services:
 stages:
   - base
   - lang
+  - init
   - tool
+  - server
 
 before_script:
   - docker login -u $DOCKER_REGISTRY_USERNAME -p $DOCKER_REGISTRY_TOKEN
@@ -25,6 +27,14 @@ jobs:
       script:
       - make -C lang/python/3.8.0 snapshot
 
+    - stage: init
+      script:
+      - make -C init/alpinelinux-s6/3.12.0-v2.0.0.1 snapshot
+
     - stage: tool
       script:
       - make -C tool/ansible/2.9.9 snapshot
+
+    - stage: server
+      script:
+      - make -C server/nginx-s6/1.19.1 snapshot
