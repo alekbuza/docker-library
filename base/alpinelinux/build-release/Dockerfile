@@ -13,7 +13,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 
-FROM aleksandarbuza/alpinelinux:latest as build
+FROM aleksandarbuza/alpinelinux:3.12.0 as build
 
 # http://dl-cdn.alpinelinux.org/alpine
 ARG ALPINELINUX_URL

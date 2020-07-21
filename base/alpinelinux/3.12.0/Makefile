@@ -22,6 +22,3 @@ DOCKER_FILE_PATH=../Dockerfile
 
 DOCKER_BUILD_ARGS=\
 	--build-arg ALPINELINUX_VERSION=$(TAG)
-
-do-push: 
-	docker push $(IMAGE):$(TAG)
